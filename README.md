@@ -1,4 +1,4 @@
-QR Code | Minimalist UI Component 📱
+# QR Code | Minimalist UI Component 📱
 A high-fidelity, responsive QR code component featuring System-Aware Dark Mode integration. This project demonstrates a "clean-code" approach to UI elements, utilising TypeScript for theme logic and SCSS for modular styling.
 
 ## 📸 Preview
