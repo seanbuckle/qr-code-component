@@ -1,5 +1,5 @@
-# QR Code | Minimalist UI Component 📱
-A high-fidelity, responsive QR code component built with a focus on layout precision and modular styling. This project demonstrates a "clean-code" approach to simple UI elements, utilising SCSS and Semantic HTML5.
+QR Code | Minimalist UI Component 📱
+A high-fidelity, responsive QR code component featuring System-Aware Dark Mode integration. This project demonstrates a "clean-code" approach to UI elements, utilising TypeScript for theme logic and SCSS for modular styling.
 
 ## 📸 Preview
 
@@ -7,32 +7,32 @@ A high-fidelity, responsive QR code component built with a focus on layout preci
 
 ## 🚀 Technical Highlights
 
+- **Theming Engine:** Custom TypeScript implementation to detect and toggle system/user theme preferences.
 - **Markup Architecture:** Pure HTML5 using semantic elements for optimal document structure.
-- **Styling Architecture:** Modular SCSS following the BEM (Block Element Modifier) methodology to ensure encapsulated, reusable styles.
-- **Layout Engine:** CSS Flexbox and Grid used in tandem to achieve perfect centring and internal padding.
-- **Responsive Design:** Mobile-first workflow using relative units (rem, px) to maintain visual balance across all screen sizes.
-- **Asset Optimisation:** High-resolution rendering and optimised font loading for a sharp, professional finish.
+- **Styling Architecture:** Modular SCSS following the BEM (Block Element Modifier) methodology.
+- **Modern CSS:** Utilises CSS Custom Properties (Variables) and the light-dark() strategy for seamless theme transitions.
+- **Responsive Design:** Mobile-first workflow using relative units (rem) to maintain visual balance.
 
 ## 🏗️ Architectural Overview
 
-### 1. Structural Precision
+### 1. TypeScript Theme Management
 
-While the design is minimalist, achieving a "pixel-perfect" match requires a disciplined approach to the box model:
-- **Card Encapsulation:** The component is built as a self-contained block, allowing it to be easily ported into larger dashboards or landing pages.
-- **Flexbox Alignment:** Utilised a dual-axis centring strategy to ensure the card remains perfectly anchored in the viewport regardless of device orientation.
-- **Typography System:** Implemented a hierarchical font system with specific attention to letter-spacing and line-height for maximum legibility.
+To go beyond static HTML/CSS, I implemented a logical layer to handle user preferences:
+- **Preference Detection:** Uses TypeScript to interface with the window.matchMedia('(prefers-color-scheme: dark)') API, ensuring the UI respects the user's OS settings on load.
+- **State Persistence:** (Optional/If applicable) The engine synchronises the theme state across the DOM, applying a data-attribute or class to the root element for consistent styling.
+- **Type Safety:** Leverages TypeScript's strict typing to ensure theme tokens are managed without runtime errors.
 
 ### 2. Scalable Style System (BEM + SCSS)
 
-Following the "Product Suite" standard, the styles are organised for long-term maintainability:
-- **BEM Methodology:** Ensures that classes like `.qr-card__image` and `.qr-card__title` remain unique and protected from global style leakage.
-- **Variables & Mixins:** Leveraged SCSS variables for the color palette and spacing scale, allowing for instant global theme updates.
-- **Performance:** Zero-dependency CSS ensures lightning-fast paint times and a perfect Core Web Vitals score.
+The visual architecture is built for maintainability:
+- **Thematic Variables:** Defined a robust set of CSS Custom Properties that swap dynamically based on the theme state, eliminating the need for redundant CSS blocks.
+- **BEM Methodology:** Ensures that classes remain unique and protected from global style leakage.
+- **Performance:** High-performance theme switching with zero layout shift (CLS).
 
-### 3. Accessible Implementation
+### 3. Structural Precision
 
-- **Alt Text Optimisation:** Descriptive metadata for the QR image ensures that screen reader users understand the context of the component.
-- **Logical Flow:** The heading structure is optimised for SEO and assistive technology navigation.
+- **Flexbox Alignment:** Utilised a dual-axis centring strategy to ensure the card remains perfectly anchored.
+- **Typography System:** Implemented a hierarchical font system with specific attention to letter-spacing and contrast ratios (WCAG compliant) in both Light and Dark modes.
 
 ## 🛠️ Built With
 
